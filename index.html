@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <title>Rock Paper Scissors</title>
+    </head>
+    <div class="wrapper">
+        <body>
+            <header>
+                <div class="rules">
+                    <p>Rules</p>
+                    <p>Rock beats Scissors | Scissors beat Paper | Paper beats Rock</p>
+                </div>
+                <h1>Rock Paper Scissors</h1>
+                <!-- <img src="assets/images/log.png" alt="logo rock paper scissors" /> -->
+                <section class="output">
+                    <div class="left">
+                        <p>You chose:</p>
+                        <p class="outputLeft"></p>
+                        <p class="playerCount"></p>
+                    </div>
+                    <div class="middle">
+                        <!-- <p>The Winner is:</p> -->
+                        <p class="outputMiddle"></p>
+                        <p class="count"></p>
+                    </div>
+                    <div class="right">
+                        <p>Computer chose:</p>
+                        <p class="outputRight"></p>
+                        <p class="computerCount"></p>
+                    </div>
+                </section>
+                <section class="reset" onclick="reset()"><img src="/assets/images/reset.jpg" alt="" /></section>
+                <section class="images">
+                    <button id="rock" value="rock" onclick="rps('rock')"><img src="/assets/images/rock1.png" alt="" /></button>
+                    <button id="paper" value="paper" onclick="rps('paper')"><img src="/assets/images/paper1.png" alt="paper image" /></button>
+                    <button id="scissors" value="scissors" onclick="rps('scissors')"><img src="/assets/images/scissors1.png" alt="scissors image" /></button>
+                </section>
+            </header>
+            <footer>
+                <p>&COPY; Michael Gee - Not a Designer but a programmer</p>
+            </footer>
+
+            <script src="assets/js/main.js"></script>
+        </body>
+    </div>
+</html>
