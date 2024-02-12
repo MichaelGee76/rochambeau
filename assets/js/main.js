@@ -67,60 +67,31 @@ function rps(choice) {
     let computerChoice = getComputerChoice();
     let playerChoice = choice.toUpperCase();
 
-    if (playerChoice === "ROCK" && computerChoice === "SCISSORS") {
-        countPlayer++;
-        console.log(countPlayer);
-
+    if (playerChoice === computerChoice) {
+        winner.textContent = "It's a tie.";
         round++;
-        winner.textContent = "You win. Rock beats Scissors.";
-        playerCount.textContent = `Your Score ${countPlayer}`;
         playerOutput.textContent = playerChoice;
         computerOutput.textContent = computerChoice;
-        computerCount.textContent = `Computer Score ${countComputer}`;
-        count.textContent = `Round ${round}`;
-    } else if (playerChoice === "SCISSORS" && computerChoice === "PAPER") {
+    } else if ((playerChoice === "ROCK" && computerChoice === "SCISSORS") || (playerChoice === "SCISSORS" && computerChoice === "PAPER") || (playerChoice === "PAPER" && computerChoice === "ROCK")) {
         countPlayer++;
-        console.log(countPlayer);
-
         round++;
-        winner.textContent = "You win. Scissors beats Paper.";
-        playerOutput.textContent = playerChoice;
-        playerCount.textContent = `Your Score ${countPlayer}`;
-        computerOutput.textContent = computerChoice;
-        computerCount.textContent = `Computer Score ${countComputer}`;
-        count.textContent = `Round ${round}`;
-    } else if (playerChoice === "PAPER" && computerChoice === "ROCK") {
-        countPlayer++;
-        console.log(countPlayer);
-
-        round++;
-        winner.textContent = "You win. Paper beats Rock.";
-        playerOutput.textContent = playerChoice;
         playerCount.textContent = `Your Score ${countPlayer}`;
         computerCount.textContent = `Computer Score ${countComputer}`;
+        winner.textContent = `You win. ${playerChoice} beats ${computerChoice}`;
+        playerOutput.textContent = playerChoice;
         computerOutput.textContent = computerChoice;
-        count.textContent = `Round ${round}`;
-    } else if (playerChoice === computerChoice) {
-        // round++;
-        // playerOutput.textContent = playerChoice;
-        // playerCount.textContent = `Your Score ${countPlayer}`;
-        // computerOutput.textContent = computerChoice;
-        // computerCount.textContent = `Computer Score ${countComputer}`;
-        // winner.textContent = "It's a tie!";
-        // count.textContent = `Round ${round}`;
-    } else {
+    } else if ((computerChoice === "ROCK" && playerChoice === "SCISSORS") || (computerChoice === "SCISSORS" && playerChoice === "PAPER") || (computerChoice === "PAPER" && playerChoice === "ROCK")) {
         countComputer++;
-        console.log("computer", countComputer);
-
         round++;
+        computerCount.textContent = `Computer Score ${countComputer}`;
+        playerCount.textContent = `Your Score ${countPlayer}`;
+        winner.textContent = `Computer win. ${computerChoice} beats ${playerChoice}`;
         playerOutput.textContent = playerChoice;
         computerOutput.textContent = computerChoice;
-        computerCount.textContent = `Computer Score ${countComputer}`;
-        winner.textContent = `You loose! ${computerChoice} beats  ${playerChoice} !`;
-        count.textContent = `Round ${round}`;
     }
-    // Fragt den Gewinner ab
+
     if (countPlayer >= 5) {
+        // Fragt den Gewinner ab
         heading.style.color = "red";
         heading.textContent = " You win the game";
         setTimeout(function () {
